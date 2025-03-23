@@ -1,2 +1,2 @@
-# AlgoBlueprint
-Data structure library (implemented in C++)
+# DataStructure
+Data structure library (implemented in C++/C)
