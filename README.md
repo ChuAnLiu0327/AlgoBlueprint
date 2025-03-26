@@ -1,2 +1,2 @@
 # DataStructure
-Data structure library (implemented in C++/C)
+## Data structure library (implemented in C/C++)
