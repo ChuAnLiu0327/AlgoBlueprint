@@ -1,93 +1,93 @@
-//// Ñ­»·Á´±í
-//#include <stdio.h>
-//#include <stdlib.h>
-//
-//typedef struct Node {
-//	int data;
-//	struct Node* next;
-//} Node;
-//
-//// ³õÊ¼»¯Á´±í£¨Í·½Úµã£©
-//Node* InitList()
-//{
-//	Node* list = (Node*)malloc(sizeof(Node));
-//	list->data = 0; //´æ´¢¶àÉÙ¸ö½Úµã
-//	list->next = list;
-//	return list;
-//}
-//
-//// Í·²å·¨
-//void headInsert(Node* list, int data)
-//{
-//	Node* node = (Node*)malloc(sizeof(Node));
-//	node->data = data;
-//	node->next = list->next;
-//	list->next = node;
-//}
-//
-//// Î²²å·¨
-//void tailInsert(Node* list, int data) 
-//{
-//	Node* n = list;
-//	Node* node = (Node*)malloc(sizeof(Node));
-//	node->data = data;
-//	while (n->next != list)
-//	{
-//		n = n->next;
-//	}
-//	node->next = list;
-//	n->next = node;
-//}
-//
-//// É¾³ı
-//int deleteNode(Node* list, int data)
-//{
-//	Node* node = list->next;
-//	Node* preNode = list;
-//	while (node != list)
-//	{
-//		if (node->data == data)
-//		{
-//			preNode->next = node->next;
-//			free(node);
-//			return 1;
-//		}
-//		preNode = node;
-//		node = node->next;
-//	}
-//	return 0;
-//}
-//void printList(Node* list) 
-//{
-//	Node* node = list->next;
-//	while (node!=list)
-//	{
-//		printf("%d\n", node->data);
-//		node = node->next;
-//	}
-//	printf("NULL\n");
-//}
-//
-//int main()
-//{
-//	Node* L = InitList();
-//	headInsert(L, 1);
-//	headInsert(L, 2);
-//	headInsert(L, 3);
-//	headInsert(L, 4);
-//	tailInsert(L, 5);
-//	tailInsert(L, 6);
-//	tailInsert(L, 7);
-//
-//	if (deleteNode(L, 1))
-//	{
-//		printf("É¾³ı³É¹¦\n");
-//	}
-//	else {
-//		printf("É¾³ıÊ§°Ü\n");
-//	}
-//
-//	printList(L);
-//	
-//	return 0;
-//}
+// å¾ªç¯é“¾è¡¨
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+	int data;
+	struct Node* next;
+} Node;
+
+// åˆå§‹åŒ–é“¾è¡¨ï¼ˆå¤´èŠ‚ç‚¹ï¼‰
+Node* InitList()
+{
+	Node* list = (Node*)malloc(sizeof(Node));
+	list->data = 0; //å­˜å‚¨å¤šå°‘ä¸ªèŠ‚ç‚¹
+	list->next = list;
+	return list;
+}
+
+// å¤´æ’æ³•
+void headInsert(Node* list, int data)
+{
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->data = data;
+	node->next = list->next;
+	list->next = node;
+}
+
+// å°¾æ’æ³•
+void tailInsert(Node* list, int data) 
+{
+	Node* n = list;
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->data = data;
+	while (n->next != list)
+	{
+		n = n->next;
+	}
+	node->next = list;
+	n->next = node;
+}
+
+// åˆ é™¤
+int deleteNode(Node* list, int data)
+{
+	Node* node = list->next;
+	Node* preNode = list;
+	while (node != list)
+	{
+		if (node->data == data)
+		{
+			preNode->next = node->next;
+			free(node);
+			return 1;
+		}
+		preNode = node;
+		node = node->next;
+	}
+	return 0;
+}
+void printList(Node* list) 
+{
+	Node* node = list->next;
+	while (node!=list)
+	{
+		printf("%d\n", node->data);
+		node = node->next;
+	}
+	printf("NULL\n");
+}
+
+int main()
+{
+	Node* L = InitList();
+	headInsert(L, 1);
+	headInsert(L, 2);
+	headInsert(L, 3);
+	headInsert(L, 4);
+	tailInsert(L, 5);
+	tailInsert(L, 6);
+	tailInsert(L, 7);
+
+	if (deleteNode(L, 1))
+	{
+		printf("åˆ é™¤æˆåŠŸ\n");
+	}
+	else {
+		printf("åˆ é™¤å¤±è´¥\n");
+	}
+
+	printList(L);
+	
+	return 0;
+}
